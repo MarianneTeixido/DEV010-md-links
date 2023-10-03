@@ -1,16 +1,10 @@
-// // Import the path module
- const path = require('path');
-   
-//console.log("Current directory:", __dirname);
+const mdlinks = require('./lib/mdlinks'); // Ruta relativa al archivo mdlinks.js
 
-//console.log(path.extname('./examples/readme.md'))
-//console.log(path.extname('./examples/readmergrgre.md'))
+// Examples:
 
- const promiseA = new Promise((resolutionFunc, rejectionFunc) => {
-  // resolutionFunc('./examples/readme.md');
-   rejectionFunc('path not found');
- });
+//Correct
+mdlinks('./examples/readme.md');
 
-//"promiseA" resolve
- promiseA.then((val) => console.log("the async value is:", val));
- promiseA.catch((error)=>console.log(error));
+
+//Fail 
+mdlinks('./examples/readme3.md');
