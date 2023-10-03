@@ -5,6 +5,6 @@ const mdlinks = require('./lib/mdlinks'); // Ruta relativa al archivo mdlinks.js
 //Correct
 mdlinks('./examples/readme.md');
 
-
-//Fail 
+mdlinks('./examples/readme.js');
+//File not found 
 mdlinks('./examples/readme3.md');
