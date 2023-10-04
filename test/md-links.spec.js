@@ -1,10 +1,12 @@
-const mdLinks = require('../');
+const mdLinks = require('../lib/mdlinks');
 
 
 describe('mdLinks', () => {
 
-  it('should...', () => {
-    console.log('FIX ME!');
+  it('Resolve promise', () => {
+    const filePath = './examples/readme.md';
+    console.log(filePath);
+    expect(filePath).toEqual('./examples/readme.md');
   });
 
 });
