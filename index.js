@@ -19,7 +19,7 @@ const mdlinks = require('./lib/mdlinks'); // Ruta relativa al archivo mdlinks.js
 // });
 
 
-mdlinks("/home/lxow/git/CENTRO/2024-1/cc2-1-24-1",true    )
+mdlinks("/home/lxow/git/CENTRO/2024-1/cc2-1-24-1", true )
   .then(links => {
     console.log(links);
   })
