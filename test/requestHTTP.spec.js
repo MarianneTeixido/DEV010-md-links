@@ -1,11 +1,6 @@
-const requestHTTP = require('../lib/requestHTTP'); 
+const requestHTTP = require('../lib/requestHTTP');
 
 
-global.fetch = jest.fn(() =>
-  Promise.resolve({
-    status: 'ok',
-  })
-);
 
 describe('requestHTTP', () => {
   it('debería existir la función', () => {
@@ -13,6 +8,12 @@ describe('requestHTTP', () => {
   });
 
   it('debería devolver un objeto con status "ok" cuando la solicitud es exitosa', async () => {
+    
+    global.fetch = jest.fn(() =>
+      Promise.resolve({
+        status: 'ok',
+      })
+    );
     const links = [
       {
         href: 'https://www.linkedin.com/in/marianneteixidodev/',

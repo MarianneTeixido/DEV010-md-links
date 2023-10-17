@@ -1,16 +1,16 @@
 const extractLinksMarkdown = require('../lib/extractLinks'); 
 
 
-describe('Check the extractLinksMarkdown function', () => {
+describe('Verifica que extractLinksMarkdown es una funcion', () => {
     
-    it('Should exist the extractLinksMarkdown function', () => {
+    it('Debería de existir extractLinksMarkdown como funcion', () => {
       // function defined
       expect(extractLinksMarkdown).toBeDefined();
       // is a function
       expect(typeof extractLinksMarkdown).toBe('function');
     });
   
-    it('Should find links within Markdown content', () => {
+    it('Debería encontrar enlaces dentro del contenido de Markdown', () => {
       //Markdown with links
       const markdownContent = `
         [Ada](https://en.wikipedia.org/wiki/Ada_Lovelace).
@@ -20,7 +20,7 @@ describe('Check the extractLinksMarkdown function', () => {
       // ExtractLinksMarkdown function
       const links = extractLinksMarkdown(markdownContent, 'path/to/my/file.md');
   
-      // links were found correctly
+      // Los links fueron encontrados correctamente
       expect(links).toEqual([
         {
           href: 'https://en.wikipedia.org/wiki/Ada_Lovelace',

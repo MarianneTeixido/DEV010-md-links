@@ -21,8 +21,8 @@ describe('mdlinks', () => {
       const resultFile = await mdlinks(validFilePath);
       const resultDir = await mdlinks(validDirPath);
 
-      expect(resultFile).toBeDefined(); // Asegura que la promesa se resuelva sin errores para un archivo
-      expect(resultDir).toBeDefined(); // Asegura que la promesa se resuelva sin errores para un directorio
+      expect(resultFile).toBeDefined(); 
+      expect(resultDir).toBeDefined(); 
 
       // Verifica que el resultado sea un objeto con propiedades que indican si es un archivo o directorio
       expect(typeof resultFile === 'object' && resultFile.isFile).toBe(true);
@@ -33,4 +33,21 @@ describe('mdlinks', () => {
     }
   });
 
+});
+
+
+describe('mdlinks', () => {
+  it('debería transformar la ruta en absoluta', async () => {
+    const relativePath = './examples/readme.md';
+
+    const expectedAbsolutePath = path.resolve(relativePath);
+
+    try {
+      const result = await mdlinks(relativePath);
+      
+      expect(result.path).toBe(expectedAbsolutePath);
+    } catch (error) {
+      expect(error).toBeUndefined(); 
+    }
+  });
 });
