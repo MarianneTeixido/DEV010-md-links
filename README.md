@@ -1,64 +1,106 @@
-# Markdown Links
+# Markdown Links (_English version_)
 
-## Índice
+## Table of Contents
 
-* [1. Preámbulo](#1-preámbulo)
-* [2. Descripción del módulo](#2-descripción-del-módulo)
-* [3. Instrucciones de instalación](#3-instrucciones-de-instalación)
-* [4. Diagrama de flujo](#4-diagrama-de-flujo)
-* [5. Ejemplos de Uso](#5-ejemplos-de-uso)
-* [6. Licencia](#6-licencia)
+* [1. Preamble](#1-preamble)
+* [2. Module Description](#2-module-description)
+* [3. Installation ](#3-installation)
+* [4. Flowchart](#4-flowchart)
+* [5. Usage Examples](#5-usage-examples)
+* [6. Credits](#6-credits)
+* [7. License](#7-license)
 
 ***
 
-## 1. Preámbulo
+## 1. Preamble
 
-[Markdown](https://es.wikipedia.org/wiki/Markdown) es un lenguaje de marcado
-ligero muy popular entre developers. Es usado en
-muchísimas plataformas que manejan texto plano (GitHub, foros, blogs, etc.) y
-es muy común encontrar varios archivos en ese formato en cualquier tipo de
-repositorio (empezando por el tradicional `README.md`).
+[_Readme in Spanish [here]()_]
 
-Estos archivos `Markdown` normalmente contienen _links_ (vínculos/ligas) que
-muchas veces están rotos o ya no son válidos y eso perjudica mucho el valor de
-la información que se quiere compartir.
+[Markdown](https://en.wikipedia.org/wiki/Markdown) is a lightweight markup language very popular among developers. It is used in many platforms that handle plain text (GitHub, forums, blogs, etc.), and it is very common to find several files in this format in any kind of repository, starting with the traditional `README.md`.
 
-Dentro de una comunidad de código abierto, nos han propuesto crear una
-herramienta usando [Node.js](https://nodejs.org/), que lea y analice archivos
-en formato `Markdown`, para verificar los links que contengan y reportar
-algunas estadísticas.
+These `Markdown` files typically contain links that are often broken or no longer valid, which greatly impairs the value of the information you want to share.
 
-![md-links](https://github.com/Laboratoria/bootcamp/assets/12631491/fc6bc380-7824-4fab-ab8f-7ab53cd9d0e4)
+Within an open-source community, we have been asked to create a tool using [Node.js](https://nodejs.org/) that reads and analyzes Markdown files to check the links they contain and report some statistics.
 
-## 2. Descripción del módulo
+## 2. Module Description
 
-Este proyecto es una librería en Node.js que funciona como
-herramienta para analizar links dentro de archivos Markdown. Esta librería
-estará disponible de dos formas: como un módulo publicado en GitHub, que las
-usuarias podrán instalar e importar en otros proyectos, y como una interfaz
-de línea de comandos (CLI) que permitirá utilizar la librería directamente
-desde el terminal.
+This project is a Node.js library that serves as a tool to analyze links within Markdown files. This library is available in two forms: as a module published on GitHub, which users can install and import into other projects, and as a Command Line Interface (CLI) that allows you to use the library directly from the terminal.
 
-[Node.js](https://nodejs.org/es/) es un entorno de ejecución para JavaScript
-construido con el [motor de JavaScript V8 de Chrome](https://developers.google.com/v8/).
-Esto nos va a permitir ejecutar JavaScript en el entorno del sistema operativo,
-ya sea tu máquina o un servidor, lo cual nos abre las puertas para poder
-interactuar con el sistema en sí, archivos, redes, etc.
+[Node.js](https://nodejs.org/en/) is a JavaScript runtime environment built with the [Chrome V8 JavaScript engine](https://developers.google.com/v8/). This allows us to run JavaScript in the operating system environment, whether it's on your machine or a server, giving us the ability to interact with the system itself, files, networks, etc.
 
+## 3. Installation 
 
+To use the following code, you need to have `Node.js` previously installed in version `>=16`,
 
-## 3. Instrucciones de instalación
+```
+$ node -v
+v18.16.1
+```
 
+After that, you should clone this repository and install the dependencies.
 
+```
+$ git clone https://github.com/MarianneTeixido/DEV010-md-links.git
+$ cd DEV010-md-links.git
+$ npm install
+```
 
-## 4. Diagrama de flujo
+Finally, you can add the contents of the __/lib__ folder to your project, which contains the necessary files for its execution.
 
+## 4. Flowchart
 
+![Flowchart](https://github.com/MarianneTeixido/DEV010-md-links/blob/main/img/Diagrama%20-%20MD%20links.png)
 
-## 5. Ejemplos de Uso
+## 5. Usage Examples
 
-Para comenzar este proyecto tendrás que hacer un fork y clonar este repositorio.
+To use this library, you should import it as a module in your code using CommonJS.
 
+```javascript
+const mdlinks = require('./lib/mdlinks');
+```
 
-## 6. Licencia
+Please note that you'll need to adjust the import method if you're using ES Modules.
 
+With the module imported in your project, you can call the `mdlinks()` function, which accepts two parameters: `path` and `validate`.
+
+- `path`: It receives the path to your Markdown file. It can read the absolute or relative path of a specific file. You can also pass the path of a folder, and the function will read all the Markdown files it finds inside.
+
+- `validate`: This is an optional boolean parameter that you can add to validate the HTTP status code. By default, mdlinks is executed with `validate` set to _false_.
+
+When using the `mdlinks()` function of this library with only the `path` parameter, it will return an object with the properties `href`, `text`, and `path`.
+
+Example:
+
+```javascript
+mdlinks('./examples/readme.md')
+   .then((links) => {
+     console.log(links); 
+   })
+      .catch((error) => {
+     console.error(error);
+   });
+```
+
+When using the `mdlinks()` function of this library with the `path` and `validate` parameters, it will return an object with the properties `href`, `text`, `path`, `status`, and `ok`.
+
+`status` will show the HTTP response code's status, and `ok` will show _ok_ if the response code is valid and _fail_ if it's not.
+
+Example:
+
+```javascript
+mdlinks("./examples/readme.md", true )
+  .then(links => {
+    console.log(links);
+  })
+  .catch(console.error);
+```
+
+Note: You can pass a directory to the path, and it will read the Markdown files within it. It won't read other directories within an existing directory.
+
+## 6. Credits
+
+Library developed by Marianne Teixido.
+
+## 7. License
+
+GNU General Public License v3.0 or later"
