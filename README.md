@@ -49,7 +49,7 @@ Finally, you can add the contents of the __/lib__ folder to your project, which 
 
 ## 4. Flowchart
 
-![Flowchart](https://github.com/MarianneTeixido/DEV010-md-links/blob/main/img/Diagrama%20-%20MD%20links.png)
+![Flowchart](img/Diagrama - MD links.png)
 
 ## 5. Usage Examples
 
