@@ -69,7 +69,7 @@ __/lib__ la cual contiene los archivos necesarios para su ejecución.
 
 ## 4. Diagrama de flujo
 
-![Diagrama de flujo](https://github.com/MarianneTeixido/DEV010-md-links/blob/main/img/Diagrama%20-%20MD%20links.png)
+![Diagrama de flujo](img/flow.png)
 
 
 ## 5. Ejemplos de Uso
