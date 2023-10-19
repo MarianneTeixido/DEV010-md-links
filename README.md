@@ -1,4 +1,4 @@
-# Markdown Links (_English version_)
+# Markdown Links Library
 
 ## Table of Contents
 
@@ -14,7 +14,7 @@
 
 ## 1. Preamble
 
-[_Readme in Spanish [here]()_]
+[_Readme in Spanish [here](README-ESP.md)_]
 
 [Markdown](https://en.wikipedia.org/wiki/Markdown) is a lightweight markup language very popular among developers. It is used in many platforms that handle plain text (GitHub, forums, blogs, etc.), and it is very common to find several files in this format in any kind of repository, starting with the traditional `README.md`.
 
