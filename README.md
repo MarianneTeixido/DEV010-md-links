@@ -99,8 +99,8 @@ Note: You can pass a directory to the path, and it will read the Markdown files 
 
 ## 6. Credits
 
-Library developed by Marianne Teixido.
+Library developed by Marianne Teixidó.
 
 ## 7. License
 
-GNU General Public License v3.0 or later"
+GNU General Public License v3.0 or later
