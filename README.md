@@ -99,7 +99,8 @@ Note: You can pass a directory to the path, and it will read the Markdown files 
 
 ## 6. Credits
 
-Library developed by Marianne Teixidó. Octuber, 2023.
+Library developed by [Marianne Teixidó](https://marianneteixido.github.io/) at [<Laboratoria>](https://www.laboratoria.la/).   
+Octuber, 2023.
 
 ## 7. License
 
